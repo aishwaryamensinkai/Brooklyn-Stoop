@@ -9,6 +9,7 @@ import Discount from "./component/Discount";
 import Location from "./component/location";
 import Footer from "./component/footer";
 import Items from "./component/Items";
+import AudioPlayer from "./component/AudioPlayer";
 
 class App extends Component {
   render() {
@@ -18,11 +19,9 @@ class App extends Component {
         <Element name="startTime">
           <Featured />
         </Element>
-
         <Element name="venue">
           <VenueInfo />
         </Element>
-
         <Element name="highlights">
           <Highlights />
         </Element>
@@ -35,8 +34,8 @@ class App extends Component {
         <Element name="location">
           <Location />
         </Element>
-
         <Footer />
+        <AudioPlayer /> 
       </div>
     );
   }
