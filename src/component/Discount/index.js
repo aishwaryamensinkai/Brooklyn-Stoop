@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import Barcode from "react-barcode"; // Import react-barcode
 
-class Pricing extends Component {
+class Discount extends Component {
   constructor(props) {
     super(props);
     this.nameRef = React.createRef(); // Ref for Name input
     this.emailRef = React.createRef(); // Ref for Email input
     this.state = {
-      barcodeValue: null,
+      barcodeValue: null, // To store generated barcode value
       errorMessage: "", // For displaying validation errors
       couponName: "", // To store the entered name for display
       couponEmail: "", // To store the entered email for display
     };
   }
 
+  // Handle form submission
   handleSave = async (e) => {
     e.preventDefault();
 
-    const name = this.nameRef.current.value;
-    const email = this.emailRef.current.value;
+    const name = this.nameRef.current.value; // Get value from Name input
+    const email = this.emailRef.current.value; // Get value from Email input
 
     // Simple email validation
     if (!this.validateEmail(email)) {
@@ -32,10 +33,10 @@ class Pricing extends Component {
       return;
     }
 
-    // Generate barcode value
+    // Generate barcode value (simulated here)
     const barcodeValue = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 
-    // Save to localStorage
+    // Save data to localStorage
     localStorage.setItem("couponName", name);
     localStorage.setItem("couponEmail", email);
     localStorage.setItem("barcodeValue", barcodeValue);
@@ -48,23 +49,22 @@ class Pricing extends Component {
       couponEmail: email,
     });
 
-    // Optionally, you can clear the form fields after saving
+    // Optionally, clear the form fields after saving
     this.nameRef.current.value = "";
     this.emailRef.current.value = "";
   };
 
+  // Validate email format using regex
   validateEmail = (email) => {
-    // Basic email validation using regex
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
   render() {
     return (
-      <div className="pricing-container">
-        <h2>Get Discount</h2>
+      <div className="Discount-container">
         <form className="coupon-form" onSubmit={this.handleSave}>
-          <h4>Fill out the form to get your coupon:</h4>
+          <h1>Fill out the form to get your coupon:</h1>
           <input
             type="text"
             placeholder="Name"
@@ -99,4 +99,4 @@ class Pricing extends Component {
   }
 }
 
-export default Pricing;
+export default Discount;

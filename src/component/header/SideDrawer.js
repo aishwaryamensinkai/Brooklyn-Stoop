@@ -9,32 +9,37 @@ import {
   faBuilding,
   faDrum,
   faDollarSign,
-  faMapMarker
+  faMapMarker,
+  faCameraRetro,
 } from "@fortawesome/free-solid-svg-icons";
 
-const SideDrawer = props => {
-  const scrollToSection = element => {
+const SideDrawer = (props) => {
+  // Function to scroll to a specific section on click
+  const scrollToSection = (element) => {
     scroller.scrollTo(element, {
-      duration: 1500,
-      delay: 150,
-      smooth: true,
-      offset: -160
+      duration: 1500, // Scroll duration in milliseconds
+      delay: 150, // Delay before scrolling starts
+      smooth: true, // Smooth scrolling
+      offset: -160, // Offset from the top after scrolling (adjust as needed)
     });
-    props.onClose(false);
+    props.onClose(false); // Close the drawer after clicking a navigation item
   };
 
+  // Styles for navigation icons
   const navIcon = {
-    color: "#1690F0",
-    padding: "10px",
-    fontSize: "25px"
+    color: "#1690F0", // Icon color
+    padding: "10px", // Padding around the icon
+    fontSize: "25px", // Icon size
   };
+
   return (
     <Drawer
-      anchor="right"
-      open={props.open}
-      onClose={() => props.onClose(false)}
+      anchor="right" // Drawer position (right side)
+      open={props.open} // Drawer open state controlled by props
+      onClose={() => props.onClose(false)} // Close drawer handler
     >
       <List component="nav">
+        {/* List items for navigation */}
         <ListItem button onClick={() => scrollToSection("startTime")}>
           <FontAwesomeIcon icon={faCalendarAlt} style={navIcon} />
           Event starts in
@@ -47,9 +52,13 @@ const SideDrawer = props => {
           <FontAwesomeIcon icon={faDrum} style={navIcon} />
           Highlights
         </ListItem>
-        <ListItem button onClick={() => scrollToSection("pricing")}>
+        <ListItem button onClick={() => scrollToSection("Discount")}>
           <FontAwesomeIcon icon={faDollarSign} style={navIcon} />
-          Pricing
+          Discount
+        </ListItem>
+        <ListItem button onClick={() => scrollToSection("Items")}>
+          <FontAwesomeIcon icon={faCameraRetro} style={navIcon} />
+          Items
         </ListItem>
         <ListItem button onClick={() => scrollToSection("location")}>
           <FontAwesomeIcon icon={faMapMarker} style={navIcon} />
@@ -59,4 +68,5 @@ const SideDrawer = props => {
     </Drawer>
   );
 };
+
 export default SideDrawer;

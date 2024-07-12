@@ -5,9 +5,10 @@ import Header from "./component/header/Header";
 import Featured from "./component/featured";
 import VenueInfo from "./component/venueInfo";
 import Highlights from "./component/highlights";
-import Pricing from "./component/pricing";
+import Discount from "./component/Discount";
 import Location from "./component/location";
 import Footer from "./component/footer";
+import Items from "./component/Items";
 
 class App extends Component {
   render() {
@@ -25,8 +26,11 @@ class App extends Component {
         <Element name="highlights">
           <Highlights />
         </Element>
-        <Element name="pricing">
-          <Pricing />
+        <Element name="Discount">
+          <Discount />
+        </Element>
+        <Element name="Items">
+          <Items />
         </Element>
         <Element name="location">
           <Location />

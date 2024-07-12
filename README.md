@@ -50,7 +50,28 @@ The project structure is organized as follows:
 
 ```bash
 .
+├── LICENSE
 ├── README.md
+├── build
+│   ├── asset-manifest.json
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   ├── service-worker.js
+│   └── static
+│       ├── css
+│       │   ├── main.b92b8615.css
+│       │   └── main.b92b8615.css.map
+│       ├── js
+│       │   ├── main.2065dc1f.js
+│       │   └── main.2065dc1f.js.map
+│       └── media
+│           ├── slide_five.4e54a2c5.jpg
+│           ├── slide_four.601453b9.jpg
+│           ├── slide_one.1fe9f82f.jpg
+│           ├── slide_six.3f407461.jpg
+│           ├── slide_three.9c2731f9.jpg
+│           └── slide_two.51a251aa.jpg
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -60,6 +81,10 @@ The project structure is organized as follows:
 ├── src
 │   ├── App.js
 │   ├── component
+│   │   ├── Discount
+│   │   │   └── index.js
+│   │   ├── Items
+│   │   │   └── index.js
 │   │   ├── featured
 │   │   │   ├── Carousel.js
 │   │   │   ├── CountDown.js
@@ -73,8 +98,6 @@ The project structure is organized as follows:
 │   │   │   ├── Discount.js
 │   │   │   └── index.js
 │   │   ├── location
-│   │   │   └── index.js
-│   │   ├── pricing
 │   │   │   └── index.js
 │   │   ├── utils
 │   │   │   └── Button.js

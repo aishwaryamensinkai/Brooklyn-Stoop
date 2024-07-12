@@ -5,8 +5,12 @@ import CountDown from "./CountDown";
 const Featured = () => {
   return (
     <div style={{ position: "relative" }}>
-      <div className="carrousel_wrapper">
+      {/* Wrapper for the carousel */}
+      <div className="carousel_wrapper">
+        {/* Render the Carousel component */}
         <Carousel />
+
+        {/* Sale name overlay */}
         <div className="artist_name">
           <div className="wrapper">
             Garage Sale <br />
@@ -14,6 +18,8 @@ const Featured = () => {
           </div>
         </div>
       </div>
+
+      {/* Render the CountDown component */}
       <CountDown />
     </div>
   );
