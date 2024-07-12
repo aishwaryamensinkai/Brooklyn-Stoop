@@ -1,58 +1,102 @@
 import React, { Component } from "react";
-import Button from "../utils/Button";
-import ticketIcon from "../../resources/images/icons/ticket.png";
-import Zoom from "react-reveal/Zoom";
+import Barcode from "react-barcode"; // Import react-barcode
+
 class Pricing extends Component {
-  state = {
-    prices: [100, 150, 250],
-    positions: ["Balcony", "Medium", "Star"],
-    desc: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, sunt earum iste numquam voluptatum",
-      "rem dolores quidem fugiat cumque amet neque debitis iure aliquid quos dolorem ratione laudantium assumenda animi!",
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad reiciendis adipisci quam aliquam facilis repudiandae voluptatem unde"
-    ],
-    linkto: [
-      "https://www.stubhub.com/balcony",
-      "https://www.stubhub.com/medium",
-      "https://www.stubhub.com/star"
-    ],
-    delay: [800, 0, 800]
+  constructor(props) {
+    super(props);
+    this.nameRef = React.createRef(); // Ref for Name input
+    this.emailRef = React.createRef(); // Ref for Email input
+    this.state = {
+      barcodeValue: null,
+      errorMessage: "", // For displaying validation errors
+      couponName: "", // To store the entered name for display
+      couponEmail: "", // To store the entered email for display
+    };
+  }
+
+  handleSave = async (e) => {
+    e.preventDefault();
+
+    const name = this.nameRef.current.value;
+    const email = this.emailRef.current.value;
+
+    // Simple email validation
+    if (!this.validateEmail(email)) {
+      this.setState({ errorMessage: "Please enter a valid email address." });
+      return;
+    }
+
+    // Optional: Add more validation for name or other fields if needed
+    if (!name) {
+      this.setState({ errorMessage: "Please enter your name." });
+      return;
+    }
+
+    // Generate barcode value
+    const barcodeValue = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
+    // Save to localStorage
+    localStorage.setItem("couponName", name);
+    localStorage.setItem("couponEmail", email);
+    localStorage.setItem("barcodeValue", barcodeValue);
+
+    // Set state to display barcode and clear error message
+    this.setState({
+      barcodeValue,
+      errorMessage: "",
+      couponName: name,
+      couponEmail: email,
+    });
+
+    // Optionally, you can clear the form fields after saving
+    this.nameRef.current.value = "";
+    this.emailRef.current.value = "";
   };
 
-  showPricing = () =>
-    this.state.prices.map((price, i) => (
-      <Zoom key={i} delay={this.state.delay[i]}>
-        <div className="pricing_item">
-          <div className="pricing_inner_wrapper">
-            <div className="pricing_title">
-              <span>${price}</span>
-              <span>{this.state.positions[i]}</span>
-            </div>
-            <div className="pricing_description">{this.state.desc[i]}</div>
-            <div className="pricing_buttons">
-              <Button
-                img={ticketIcon}
-                size="large"
-                alt="Purchase ticket now"
-                name="Buy Now"
-                bck="#1690F0"
-                color="#fff"
-                link={this.state.linkto[i]}
-              />
-            </div>
-          </div>
-        </div>
-      </Zoom>
-    ));
+  validateEmail = (email) => {
+    // Basic email validation using regex
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   render() {
     return (
-      <div className="bck_black">
-        <div className="center_wrapper pricing_section">
-          <h2>Pricing</h2>
-        </div>
-        <div className="pricing_wrapper">{this.showPricing()}</div>
+      <div className="pricing-container">
+        <h2>Get Discount</h2>
+        <form className="coupon-form" onSubmit={this.handleSave}>
+          <h4>Fill out the form to get your coupon:</h4>
+          <input
+            type="text"
+            placeholder="Name"
+            ref={this.nameRef} // Attach ref to the Name input field
+            className="form-input"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            ref={this.emailRef} // Attach ref to the Email input field
+            className="form-input"
+          />
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+          {this.state.errorMessage && (
+            <p className="error-message">{this.state.errorMessage}</p>
+          )}
+        </form>
+        {this.state.barcodeValue && (
+          <div className="barcode-display">
+            <h4>Details:</h4>
+            <p>Name: {this.state.couponName}</p>
+            <p>Email: {this.state.couponEmail}</p>
+            <h4>Your Barcode:</h4>
+            <Barcode value={`$` + this.state.barcodeValue} />
+            <p>Take a screenshot of this barcode to avail your coupon.</p>
+          </div>
+        )}
       </div>
     );
   }
 }
+
 export default Pricing;
