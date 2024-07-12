@@ -1,3 +1,50 @@
+.pricing-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.share_options {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.share_button {
+  margin: 0 10px;
+}
+
+.coupon-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.barcode-display {
+  margin-top: 20px;
+}
 body {
   padding: 0;
   margin: 0;
@@ -13,7 +60,7 @@ body {
 }
 
 .bck_black {
-  background: #3C3C3C;
+  background: #3c3c3c;
 }
 
 .bck_red {
@@ -171,6 +218,7 @@ footer .footer_copyright {
 .vn_wrapper {
   display: flex;
   padding: 170px 0px;
+  padding-bottom: 50px;
 }
 
 .vn_item {
@@ -288,6 +336,40 @@ footer .footer_copyright {
   font-weight: 300;
 }
 
+.coupon_form {
+  margin-top: 20px;
+}
+
+.coupon_form h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.coupon_form input[type="text"],
+.coupon_form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.coupon_form button[type="submit"] {
+  background: #1690f0;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.coupon_form button[type="submit"]:hover {
+  background: #0077cc;
+}
 /*====================
         PRICING
 ======================*/

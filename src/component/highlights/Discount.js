@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
-import Button from "../utils/Button";
-import ticketIcon from "../../resources/images/icons/ticket.png";
 
 class Discount extends Component {
-  state = {
-    discountStart: 10,
-    discountEnd: 50,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      discountStart: 1,
+      discountEnd: 10,
+      showForm: false,
+      barcodeValue: null,
+    };
+  }
 
   displayPercentage = () => {
     if (this.state.discountStart < this.state.discountEnd) {
@@ -21,14 +24,13 @@ class Discount extends Component {
       this.displayPercentage();
     }, 50);
   }
-
   render() {
     return (
       <div className="center_wrapper">
         <div className="discount_wrapper">
           <Fade onReveal={() => this.displayPercentage()}>
             <div className="discount_percentage">
-              <span>{this.state.discountStart}%</span>
+              <span>{this.state.discountStart}$</span>
               <span>OFF</span>
             </div>
           </Fade>
@@ -43,15 +45,6 @@ class Discount extends Component {
                   Stay updated with our newest arrivals and special collections
                 </li>
               </ul>
-              <Button
-                img={ticketIcon}
-                size="large"
-                alt="Purchase ticket now"
-                name="Buy Now"
-                bck="#1690F0"
-                color="#fff"
-                link="http://www.google.com"
-              />
             </div>
           </Slide>
         </div>
@@ -59,4 +52,5 @@ class Discount extends Component {
     );
   }
 }
+
 export default Discount;

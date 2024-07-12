@@ -12,7 +12,7 @@ const Description = () => {
           physical stores. Our coupons are valid on a wide range of products,
           ensuring you get the best deals wherever you shop with us. Don't miss
           out on this opportunity to save big! Enjoy discounts ranging from{" "}
-          <strong>10% to 50%</strong>.
+          <strong>$1 to $10</strong>.
         </div>
       </div>
     </Fade>
