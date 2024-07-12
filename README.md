@@ -19,8 +19,8 @@ https://codedex.notion.site/Track-2-Brooklyn-Stoop-Sale-01895caec65548f4bdf21d6d
 - HTML5
 - CSS3
 - JavaScript
-- [Map API] (Link to map API documentation)
-
+- Map
+  
 ## Installation
 
 To run this application locally, follow these steps:
