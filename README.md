@@ -2,6 +2,11 @@
 
 Brooklyn Stoop Sale is a web application designed to promote and manage a community stoop sale event in Brooklyn. It provides users with an interactive platform to discover sales, view event details, and participate in the local community event.
 
+Link for the hackathon
+https://codedex.notion.site/Track-2-Brooklyn-Stoop-Sale-01895caec65548f4bdf21d6dd7144ef2
+
+![Image](./Screenshot.png)
+
 ## Features
 
 - **Interactive Map**: Explore sale locations plotted on an interactive map.
