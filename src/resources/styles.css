@@ -11,12 +11,15 @@ body {
 .bck_black {
   background: #3c3c3c;
 }
-.bck_white {
-  background: #ffffff;
+
+.bck_black {
+  background: #3C3C3C;
 }
+
 .bck_red {
   background: #ff4800;
 }
+
 .bck_yellow {
   background: #ffa800;
 }
@@ -30,7 +33,6 @@ body {
   width: 900px;
   margin: 0 auto;
 }
-
 /*====================
         HEADER
 ======================*/
@@ -43,6 +45,7 @@ header {
 header .header_logo {
   flex-grow: 1;
 }
+
 header .header_logo_venue {
   font-size: 40px;
 }
@@ -52,9 +55,9 @@ header .header_logo_title {
 }
 
 .nav_icon {
-  color: "green";
-  padding: "10px";
-  font-size: "20px";
+  color: green;
+  padding: 10px;
+  font-size: 20px;
 }
 
 /*====================
@@ -65,7 +68,7 @@ footer {
   padding: 50px 0px;
   text-align: center;
   font-size: 60px;
-  color: #ffffff;
+  color: black;
   background: red;
 }
 
@@ -78,8 +81,9 @@ footer .footer_copyright {
 ======================*/
 
 .carrousel_wrapper {
-  height: 700px;
+  height: 800px;
   overflow: hidden;
+  position: relative;
 }
 
 .carrousel_image {
@@ -88,24 +92,35 @@ footer .footer_copyright {
 
 .artist_name {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 160px;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border: 2px solid white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
 }
 
 .artist_name .wrapper {
-  border: 2px solid white;
-  height: 121px;
-  margin: 6px;
+  width: 30%;
+  font-weight: bolder;
+  margin: 16px;
   text-align: center;
-  color: #fff;
+  color: black;
   font-size: 40px;
-  padding: 21px 70px 0px 70px;
+  padding: 20px 20px 20px 20px;
   text-transform: uppercase;
+  transition: all 0.5s ease;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.artist_name:hover .wrapper {
+  opacity: 1;
+}
+
+.artist_name .wrapper:hover {
+  opacity: 0;
 }
 
 /*====================
@@ -138,6 +153,7 @@ footer .footer_copyright {
   margin-right: 14px;
   padding-right: 49px;
 }
+
 .countdown_wrapper .countdown_item:last-child .countdown_time {
   border: none;
 }
@@ -159,7 +175,7 @@ footer .footer_copyright {
 
 .vn_item {
   width: 50%;
-  color: #ffffff;
+  color: black;
   text-align: center;
 }
 
@@ -281,7 +297,7 @@ footer .footer_copyright {
 }
 
 .pricing_section h2 {
-  color: #ffffff;
+  color: black;
   text-transform: uppercase;
   text-align: center;
   font-size: 50px;
@@ -292,6 +308,7 @@ footer .footer_copyright {
   display: flex;
   flex-wrap: wrap;
 }
+
 .pricing_wrapper .pricing_item {
   flex-grow: 1;
   width: 33%;
@@ -305,20 +322,23 @@ footer .footer_copyright {
 }
 
 .pricing_inner_wrapper .pricing_title {
-  color: #ffffff;
+  color: black;
   text-align: center;
   border-bottom: 1px solid #ffa800;
   padding-bottom: 20px;
 }
+
 .pricing_inner_wrapper .pricing_title span:nth-child(1) {
   font-size: 50px;
   display: block;
 }
+
 .pricing_inner_wrapper .pricing_title span:nth-child(2) {
   text-transform: uppercase;
   font-size: 28px;
   font-weight: 300;
 }
+
 .pricing_inner_wrapper .pricing_description {
   color: #b8b8b8;
   font-weight: 300;
@@ -345,6 +365,7 @@ footer .footer_copyright {
   bottom: 0px;
   width: 100%;
 }
+
 .location_tag div {
   background: #2c2c2c;
   color: #ffffff;

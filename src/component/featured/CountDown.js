@@ -6,11 +6,12 @@ class CountDown extends Component {
     days: "0",
     hours: "0",
     minutes: "0",
-    seconds: "0"
+    seconds: "0",
   };
-  getTimeLeft = eventDate => {
+  getTimeLeft = (eventDate) => {
     const time = Date.parse(eventDate) - Date.parse(new Date());
     if (time < 0) {
+      console.log("Time Ended");
     } else {
       const seconds = Math.floor((time / 1000) % 60);
       const minutes = Math.floor((time / 1000 / 60) % 60);
