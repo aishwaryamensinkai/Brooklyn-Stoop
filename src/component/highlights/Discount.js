@@ -6,8 +6,8 @@ import ticketIcon from "../../resources/images/icons/ticket.png";
 
 class Discount extends Component {
   state = {
-    discountStart: 0,
-    discountEnd: 30
+    discountStart: 10,
+    discountEnd: 50,
   };
 
   displayPercentage = () => {
@@ -34,13 +34,15 @@ class Discount extends Component {
           </Fade>
           <Slide right>
             <div className="discount_description">
-              <h3>Purchase tickets before 30th of October</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-                quaerat itaque similique sequi quos commodi, magnam nobis
-                officia amet, blanditiis autem distinctio saepe hic optio rerum.
-                Sequi corporis veritatis doloribus?
-              </p>
+              <h3>Register before 30th of October:</h3>
+              <ul>
+                <li>Instant access to our latest promotions and discounts</li>
+                <li>Exclusive offers tailored just for you</li>
+                <li>Convenient online and offline redemption options</li>
+                <li>
+                  Stay updated with our newest arrivals and special collections
+                </li>
+              </ul>
               <Button
                 img={ticketIcon}
                 size="large"

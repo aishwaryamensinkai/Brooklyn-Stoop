@@ -175,7 +175,7 @@ footer .footer_copyright {
 
 .vn_item {
   width: 50%;
-  color: black;
+  color: white;
   text-align: center;
 }
 
@@ -228,7 +228,7 @@ footer .footer_copyright {
 .vn_item .vn_desc {
   font-size: 25px;
   font-weight: 300;
-  margin-bottom: 90px;
+  margin-bottom: 80px;
 }
 
 /*====================

@@ -41,11 +41,12 @@ const VenueInfo = () => {
                   />
                 </div>
                 <div className="vn_title">Event Location</div>
-                <div className="vn_desc">
+                <div className="vn_desc" style={{ marginBottom: "63px" }}>
                   2nd Pl & Court St
                   <br />
                   Brooklyn, NY 11231
                 </div>
+                See in Maps at bottom of the page.
               </div>
             </div>
           </Fade>
